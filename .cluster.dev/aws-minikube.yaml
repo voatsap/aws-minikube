@@ -1,5 +1,5 @@
 cluster:
-  installed: false
+  installed: true
   name: dev-mike
   cloud:
     provider: aws
@@ -7,7 +7,7 @@ cluster:
     vpc: default
     domain: cluster.dev
     provisioner:
-      type: minikube
+      type: eks
       instanceType: m5.large
   addons:
     nginx-ingress: true
