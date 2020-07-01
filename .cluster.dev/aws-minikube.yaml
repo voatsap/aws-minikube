@@ -1,6 +1,6 @@
   
 cluster:
-  installed: false
+  installed: true
   name: dev-mike-eks
   cloud:
     provider: aws
