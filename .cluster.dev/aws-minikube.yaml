@@ -1,6 +1,6 @@
   
 cluster:
-  installed: tru
+  installed: true
   name: dev-eks-mikonoid
   cloud:
     provider: aws
