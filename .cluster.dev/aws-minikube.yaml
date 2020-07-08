@@ -1,7 +1,7 @@
   
 cluster:
-  installed: false
-  name: dev-eks-mikonoid
+  installed: true
+  name: dev-mk-eks
   cloud:
     provider: aws
     region: eu-central-1
