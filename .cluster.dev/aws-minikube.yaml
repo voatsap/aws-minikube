@@ -1,6 +1,6 @@
   
 cluster:
-  installed: true
+  installed: false
   name: dev-mk-eks
   cloud:
     provider: aws
