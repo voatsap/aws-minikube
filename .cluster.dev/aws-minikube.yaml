@@ -1,7 +1,7 @@
   
 cluster:
-  installed: false
-  name: dev-mk-eks
+  installed: true
+  name: cluster-mk
   cloud:
     provider: aws
     region: eu-central-1
