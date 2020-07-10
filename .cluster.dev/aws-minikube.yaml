@@ -1,6 +1,6 @@
   
 cluster:
-  installed: false
+  installed: true
   name: cluster-mk51
   cloud:
     provider: aws
