@@ -1,7 +1,7 @@
   
 cluster:
-  installed: false
-  name: cluster-mk51
+  installed: true
+  name: cluster-mk51-2
   cloud:
     provider: aws
     region: eu-central-1
