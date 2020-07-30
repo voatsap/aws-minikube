@@ -1,6 +1,6 @@
   
 cluster:
-  installed: false
+  installed: true
   name: mikonoid-cluster
   cloud:
     provider: aws
