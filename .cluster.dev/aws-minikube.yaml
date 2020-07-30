@@ -1,7 +1,7 @@
   
 cluster:
   installed: false
-  name: cluster-mk51-2
+  name: mikonoid-cluster
   cloud:
     provider: aws
     region: eu-central-1
