@@ -1,6 +1,6 @@
   
 cluster:
-  installed: true
+  installed: false
   name: cluster-mk51-2
   cloud:
     provider: aws
