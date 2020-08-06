@@ -1,13 +1,20 @@
 on:
   push:
     paths:
-      - '.cluster.dev/aws-minikube.yaml'
+      - 'entrypoint.sh'
+      - 'bin/**'
+      - 'terraform/**'
+      - 'kubernetes/apps/**'
+      - 'Dockerfile'
+      - '.github/workflows/**'
+      - '.cluster.dev/**'
+      - 'action.yaml'
     branches:
       - master
 jobs:
   deploy_cluster_job:
     runs-on: ubuntu-latest
-    name: Cluster.dev
+    name: cluster.dev
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v2
@@ -15,9 +22,11 @@ jobs:
       id: reconcile
       uses: shalb/cluster.dev@master
       env:
-        AWS_ACCESS_KEY_ID: "${{ secrets.AWS_ACCESS_KEY_ID }}"
-        AWS_SECRET_ACCESS_KEY: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DIGITALOCEAN_TOKEN: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        SPACES_ACCESS_KEY_ID: ${{ secrets.SPACES_ACCESS_KEY_ID }}
+        SPACES_SECRET_ACCESS_KEY:  ${{ secrets.SPACES_SECRET_ACCESS_KEY }}
         CLUSTER_CONFIG_PATH: "./.cluster.dev/"
-        VERBOSE_LVL: DEBUG
     - name: Get the Cluster Credentials
       run: echo -e "\n\033[1;32m${{ steps.reconcile.outputs.ssh }}\n\033[1;32m${{ steps.reconcile.outputs.kubeconfig }}\n\033[1;32m${{ steps.reconcile.outputs.argocd }}"
